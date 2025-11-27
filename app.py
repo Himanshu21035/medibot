@@ -9,16 +9,16 @@ from google import genai
 app = Flask(__name__)
 CORS(app)
 
-# Configuration
-GOOGLE_API_KEY = "AIzaSyBMmOaSLStDSYA2PKgd-C1twoZDXsM_cAY"
-PINECONE_API_KEY ="pcsk_7U6p86_DMVfbQKxRSWJ1XgjwppqCkbGcjrZaUBBuUsnc9XWqdbfnAQGUWa3dGB8nWKwWq3"
-INDEX_NAME = "medical-chatbot"
+
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+INDEX_NAME = os.environ.get("INDEX_NAME", "medical-chatbot")
 
 # Initialize models
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 # genai.configure(api_key=GOOGLE_API_KEY)
 # gemini_model = genai.GenerativeModel("gemini-pro")
-client = genai.Client(api_key="AIzaSyBMmOaSLStDSYA2PKgd-C1twoZDXsM_cAY")
+client = genai.Client(api_key=GOOGLE_API_KEY)
 
 # port = int(os.environ.get("PORT", 8080))
 # Initialize Pinecone
