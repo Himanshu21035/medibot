@@ -1,0 +1,58 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+
+# === Virtual Environment ===
+venv/
+env/
+.venv/
+ENV/
+
+# === Flask / Instance Files ===
+instance/
+*.sqlite
+*.db
+
+# Environment variables
+.env
+.env.*
+
+# === Logs ===
+*.log
+logs/
+
+# === Byte-compiled / cache ===
+*.egg-info/
+.eggs/
+.cache/
+pytest_cache/
+pip-wheel-metadata/
+
+# === IDE Stuff ===
+.vscode/
+.idea/
+*.iml
+
+# === OS / Editor files ===
+.DS_Store
+Thumbs.db
+
+# === Dependencies ===
+/pip-log.txt
+pip-delete-this-directory.txt
+
+# === Build / Distribution ===
+build/
+dist/
+*.egg
+*.whl
+
+# === Testing ===
+.coverage
+htmlcov/
+.tox/
+.nox/
