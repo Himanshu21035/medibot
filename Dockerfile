@@ -8,6 +8,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENV PORT=8080
+EXPOSE 8080
+
+# For production, consider using gunicorn:
+# CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
 
 CMD ["python", "app.py"]
