@@ -10,4 +10,4 @@ COPY . .
 
 ENV PORT=8080
 
-CMD ["python", "flsk.py"]
+CMD ["python", "app.py"]

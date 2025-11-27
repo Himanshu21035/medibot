@@ -20,7 +20,7 @@ embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 # gemini_model = genai.GenerativeModel("gemini-pro")
 client = genai.Client(api_key="AIzaSyBMmOaSLStDSYA2PKgd-C1twoZDXsM_cAY")
 
-port = int(os.environ.get("PORT", 8080))
+# port = int(os.environ.get("PORT", 8080))
 # Initialize Pinecone
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
@@ -171,4 +171,5 @@ def health_check():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
